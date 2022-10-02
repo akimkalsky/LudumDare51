@@ -22,7 +22,7 @@ namespace TarodevController {
         private void Update() {
             if (!_player) return;
 
-            var target = new Vector3(Mathf.Clamp(_player.position.x, _minX, _maxX), _yLock, -10);
+            var target = new Vector3(Mathf.Clamp(_player.position.x, _minX, _maxX), _player.position.y, -10);
             transform.position = Vector3.SmoothDamp(transform.position, target, ref _currentVel, _smoothTime);
         }
     }
